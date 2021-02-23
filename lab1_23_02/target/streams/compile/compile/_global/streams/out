@@ -1,0 +1,7 @@
+[0m[[0m[31merror[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab1_23_02\src\main\scala\Main.scala:26:12: not found: value napis[0m
+[0m[[0m[31merror[0m] [0m[0m  val dl = napis.split('\n').maxBy(s=>s.length).length + 4[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab1_23_02\src\main\scala\Main.scala:28:13: not found: value napis[0m
+[0m[[0m[31merror[0m] [0m[0m  val tab = napis.split('\n').map(s => "* " + s + " *\n").mkString("")[0m
+[0m[[0m[31merror[0m] [0m[0m            ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
