@@ -18,10 +18,12 @@ object Main extends App {
   def obramuj(napis: String): String = {
     val dl = napis.split('\n').maxBy(s=>s.length).length + 4
     val gwiazdki = "*" * dl + "\n"
-    val tab = napis.split('\n').map(s => "* " + s + " *\n").mkString("")
+    val tab = napis.split('\n').map(s => "* " + s + " " * (dl-s.length-3) + "*\n").mkString("")
     return gwiazdki + tab + gwiazdki
     
   }
-  val n = "Ala ma kota, a Robert psa\nkupili dzisiaj rowery dwa"
+  val n = "Ala ma kota, Robert psa\nkupili dzisiaj rowery dwa"
+  val m = "Ala ma kota, Robert psa\nkupili dzisiaj rowery dwa\nha ha ha ha"
   println(obramuj(n))
+  println(obramuj(m))
 }
