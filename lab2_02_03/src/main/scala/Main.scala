@@ -20,8 +20,27 @@ object Main extends App {
       case _ => poboczna(n%2, 3)
     }
   }
-  val liczba = io.StdIn.readInt()
-  println(czy_pierwsza(liczba))
+  // val liczba = io.StdIn.readInt()
+  // println(czy_pierwsza(liczba))
+
+
+
+  def czy_pierwsza2(n:Int): Boolean = {
+    def poboczna(n:Int, dziel:Int): Boolean ={
+      n match{
+        case 0 => false
+        case 1 => true
+        case _ => poboczna(n%dziel,dziel+1)
+      }
+    }
+    n match{
+      case 0 => false
+      case 1 => false
+      case 2 => true
+      case _ => poboczna(n%2, 3)
+    }
+  }
+
 
 // Zad 2
 // Napisz funkcję rekurencyjną jestPalindromem(tab: Array[Int]): Boolean,
@@ -58,4 +77,55 @@ println(jestPalindromem(palindrom3))
 println(jestPalindromem(palindrom4))
 println(jestPalindromem(palindrom5))
 println(jestPalindromem(palindrom6))
+
+// Zad 3
+// Napisz funkcję daSię(n: Int): Boolean,
+// która dla argumentu n będącego liczbą naturalną (tzn. n >= 0) sprawdza,
+// czy każdą parzystą liczbę naturalną z przedziału (2..n]
+// da się przedstawić jako sumę dwóch liczb pierwszych.
+// Dla każdej ze sprawdzanych liczb funkcja powinna wypisać w konsoli znaleziony "rozkład".
+// Rozwiąż to zadanie bez korzystania ze zmiennych i "pętli".
+
+def daSię(n: Int): Boolean = {
+  @annotation.tailrec
+  def poboczna (n: Int): Boolean = {
+    @annotation.tailrec
+    def pierwsza (n: Int, test: Int): String = {
+      //println(test)
+      if (test > n/2) "blad"
+      else{
+        if (czy_pierwsza2(test)){
+          if(czy_pierwsza2(n-test)){
+            n.toString + ": " + test.toString + " + " + (n-test).toString
+          }else pierwsza(n, test+1)
+        }else pierwsza(n, test + 1)
+      }
+    }
+    if (n <=3) false
+    else{
+      if(n%2 == 0){
+        println(pierwsza(n, 2))
+        poboczna(n-1)
+      }else{
+        println(pierwsza(n-1, 2))
+        poboczna(n-2)
+      }
+      
+    }
+  }
+  if (n<4){
+    println("Nie da sie, podaj liczbe > 3")
+    return false
+  }else{
+    poboczna(n)
+  }
+}
+daSię(1)
+daSię(13)
+
+
+
+
+
+
 }
