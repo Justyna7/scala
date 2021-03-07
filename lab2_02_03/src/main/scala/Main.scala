@@ -123,9 +123,50 @@ def daSię(n: Int): Boolean = {
 daSię(1)
 daSię(13)
 
+// Zad 4
+// Napisz funkcję rekurencyjną trójkąt(wys: Int): Unit,
+// która wyświetla na ekranie trójkąt o wysokości n:
+//         1
+//       1   1
+//     1   2   1
+//   1   3   3   1
+// 1   4   6   4   1
+//       ...
+// Jak widać liczby stojące na brzegach trójkąta są równe 1,
+// a każda stojąca „wewnątrz” jest sumą dwóch stojących "na prawo" i "na lewo" od jej pozycji,
+// ale w wierszu poprzednim.
+// Rozwiąż to zadanie bez korzystania ze zmiennych i "pętli".
 
-
-
-
-
+def trójkąt(wys: Int): Unit = {
+  def poboczna (n: Int, od: Int, li: List[Int]):Unit = {
+    def str (l1: List[Int], l2: List[Int]): List[Int] = l1 match{
+      case List() => l2
+      case a::b => b match {
+                      case x::_ => str(b, (a+x)::l2)
+                      case _ => str(b,1::l2)
+                    }
+      case _ => 1::l2
+    }
+    def rysuj (lista: List[Int], s:String):String = lista match{
+      case List() => s
+      case a::b => rysuj(b, s + "   " + a.toString)
+      case _ => s
+    }
+    println(rysuj(li, "  "*(n)))
+    if (n == 1) println("")
+    else {
+      val przechowaj = str(li, List(1))
+      poboczna(n-1, od, przechowaj)
+      //println("  "*(od-n) + "1" + "   "*(n-1) + " "* (n-2) + "1" )
+    }
+  }
+  if (wys < 1) println("")
+  else poboczna(wys, wys, List(1))
+}
+println("trojkat 0")
+trójkąt(0)
+println("trojkat 1")
+trójkąt(1)
+println("trojkat 29")
+trójkąt(29)
 }

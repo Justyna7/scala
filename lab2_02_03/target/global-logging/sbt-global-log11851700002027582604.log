@@ -1,0 +1,7 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(run, Some(3eef0bf2-efac-4d7a-9f62-a6a59b960ba9), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Compile / run[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to D:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab2_02_03\target\scala-2.13\classes ...[0m
+[0m[[0m[32msuccess[0m] [0m[0mTotal time: 1 s, completed 5 mar 2021, 18:20:17[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m
+[0m[[0m[0mdebug[0m] [0m[0mForcing garbage collection...[0m

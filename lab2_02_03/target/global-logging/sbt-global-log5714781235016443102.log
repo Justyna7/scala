@@ -1,0 +1,6 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(run, Some(32cd9850-a908-41f9-9f8e-ad1f53fbd8be), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Compile / run[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[33mwarn[0m] [0m[0mCanceling execution...[0m
+[0m[[0m[33mwarn[0m] [0m[0mIn the last 7 seconds, 5.912 (87,8%) were spent in GC. [Heap: 0,09GB free of 1,00GB, max 1,00GB] Consider increasing the JVM heap using `-Xmx` or try a different collector, e.g. `-XX:+UseG1GC`, for better performance.[0m
+[0m[[0m[0minfo[0m] [0m[0mshutting down sbt server[0m

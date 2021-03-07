@@ -1,0 +1,11 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(run, Some(57d194a3-1346-4f49-8159-f7da1fc10e64), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Compile / run[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to D:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab2_02_03\target\scala-2.13\classes ...[0m
+[0m[[0m[31merror[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab2_02_03\src\main\scala\Main.scala:147:25: too many arguments (found 3, expected 2) for method poboczna: (n: Int, od: Int): Unit[0m
+[0m[[0m[31merror[0m] [0m[0m      poboczna(n-1, od, lista)[0m
+[0m[[0m[31merror[0m] [0m[0m                        ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mcompileIncremental[0m) Compilation failed[0m
+[0m[[0m[31merror[0m] [0m[0mTotal time: 0 s, completed 5 mar 2021, 18:20:07[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m
