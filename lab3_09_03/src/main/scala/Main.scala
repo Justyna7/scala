@@ -56,8 +56,40 @@ def ciag(n: Int): Int = {
 }
 println(ciag(8))
 
+// Zadanie 4
+// Zdefiniuj funkcję rekurencyjną
+// def maksimum(l1: List[Double], l2: List[Double]): List[Double]
+// która porównuje elementy list będących jej argumentami i "po współrzędnych" produkuje listę składającą się z maksimów.
+// Jeżeli, któraś lista jest dłuższa, jej "nadmiarowe" elementy powinny zostać dodane na koniec listy wynikowej. Przykład:
+// maksimum(List(2.0, -1.6, 3.2, 5.4, -8.4), List(3.3, -3.1, 3.2, -4.1, -0.4, 5.5)) == List(3.3, -1.6, 3.2, 5.4, -0.4, 5.5)
+// Rozwiąż to zadanie wykorzystując rekurencję ogonową oraz dopasowanie do wzorca (nie korzystaj z metod head i tail).
 
+def maksimum(l1: List[Double], l2: List[Double]): List[Double] = {
+  @annotation.tailrec
+  def poboczna(l1: List[Double], l2: List[Double], wynik:List[Double]): List[Double] = {
+    def dopisz(lista: List[Double], wynik: List[Double]): List[Double] = lista match {
+      case List() => wynik.reverse
+      case a::b => dopisz(b, a::wynik)
+    }
 
+    l1 match {
+      case List() => l2 match {
+                            case List() => wynik.reverse
+                            case a::b => dopisz(b, a::wynik)
+                          }
+      case x::y => l2 match {
+                            case List() => dopisz(y, x::wynik)
+                            case a::b if (x>=a) => poboczna(y, b, x::wynik)
+                            case a::b if (a>x) => poboczna(y, b, a::wynik)
+                          }
+    }
+  }
+poboczna(l1,l2, List())
+}
+val tab1 = List(10.7,2,3,3,4,30,1,5,79,2)
+val tab2 = List(3,4,2,5,4,15,16,4,35,23.6,10,5)
+val tab3 = List(2.7)
+println(maksimum(tab3,tab2))
 
 
 
