@@ -13,4 +13,27 @@ def reverse(str: String): String = {
   rev(str, "")
 }
 println(reverse("ala ma kota"))
+
+
+// Zadanie 2
+// Napisz funkcję jestPierwsza(n: Int): Boolean, która sprawdza, czy argument jest liczba pierwszą.
+// Rozwiąż to zadanie bez korzystania ze zmiennych oraz wykorzystaj rekurencję ogonową.
+
+def jestPierwsza(n: Int): Boolean = {
+  @annotation.tailrec
+  def poboczna(n: Int, dziel: Int): Boolean ={
+      n match{
+        case 0 => false
+        case 1 => true
+        case _ => poboczna(n%dziel,dziel+1)
+      }
+    }
+    n match{
+      case 0 => false
+      case 1 => false
+      case 2 => true
+      case _ => poboczna(n%2, 3)
+    }
+}
+println(jestPierwsza(13))
 }

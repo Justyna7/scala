@@ -1,0 +1,8 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(reStart, Some(d1d15373-b0e9-45a5-8573-146ce61fb661), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: reStart[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to D:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab3_09_03\target\scala-2.13\classes ...[0m
+[0m[[0m[0minfo[0m] [0m[0m[33mApplication [0m[1mlab3_09_03[0m[33m not yet started[0m
+[0m[[0m[0minfo[0m] [0m[0m[33mStarting application [0m[36mlab3_09_03[0m[33m in the background ...[0m
+[0m[[0m[32msuccess[0m] [0m[0mTotal time: 1 s, completed 9 mar 2021, 14:51:52[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m
