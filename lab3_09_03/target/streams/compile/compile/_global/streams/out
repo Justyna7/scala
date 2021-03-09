@@ -1,7 +1,5 @@
-[0m[[0m[31merror[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab3_09_03\src\main\scala\Main.scala:22:1: expected class or object definition[0m
-[0m[[0m[31merror[0m] [0m[0mdef jestPierwsza(n: Int): Boolean = {[0m
-[0m[[0m[31merror[0m] [0m[0m^[0m
-[0m[[0m[31merror[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab3_09_03\src\main\scala\Main.scala:38:1: Unmatched closing brace '}' ignored here[0m
-[0m[[0m[31merror[0m] [0m[0m}[0m
-[0m[[0m[31merror[0m] [0m[0m^[0m
-[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
+[0m[[0m[31merror[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab3_09_03\src\main\scala\Main.scala:51:23: not enough arguments for method poboczna: (n: Int, wyr1: Int, wyr2: Int): Int.[0m
+[0m[[0m[31merror[0m] [0m[0mUnspecified value parameter wyr2.[0m
+[0m[[0m[31merror[0m] [0m[0m    case _ => poboczna(wyr2, wyr1+wyr2)[0m
+[0m[[0m[31merror[0m] [0m[0m                      ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

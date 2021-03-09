@@ -36,4 +36,29 @@ def jestPierwsza(n: Int): Boolean = {
     }
 }
 println(jestPierwsza(13))
+
+// Zadanie 3
+// Zdefiniuj funkcję ciag(n: Int): Int, która zwróci n-ty wyrażony wzorem:
+// F(0) = 1
+// F(1) = 1
+// F(n) = F(n-1) + F(n-2) dla n > 1
+// Rozwiąż to zadanie bez korzystania ze zmiennych oraz wykorzystaj rekurencję ogonową.
+// Pierwsze 10 wyrazów ciągu: 1, 1, 2, 3, 5, 8, 13, 21, 34, 55.
+
+def ciag(n: Int): Int = {
+  @annotation.tailrec
+  def poboczna(n: Int, wyr1: Int, wyr2: Int):Int = n match {
+    case 1 => wyr1 + wyr2
+    case _ => poboczna(n-1, wyr2, wyr1+wyr2)
+  }
+  if (n == 0 || n == 1) 1
+  else poboczna(n-2, 1, 1)
+}
+println(ciag(8))
+
+
+
+
+
+
 }
