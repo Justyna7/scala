@@ -1,4 +1,4 @@
-[0m[[0m[33mwarn[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab4_16_03\src\main\scala\Main.scala:12:26: Option[Double] and Int are unrelated: they will most likely never compare equal[0m
-[0m[[0m[33mwarn[0m] [0m[0m    case (List(),x) if x == 0 => None[0m
-[0m[[0m[33mwarn[0m] [0m[0m                         ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
+[0m[[0m[31merror[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab4_16_03\src\main\scala\Main.scala:46:28: reassignment to val[0m
+[0m[[0m[31merror[0m] [0m[0m    case (a::b, c::d) if (c=a) => w match {[0m
+[0m[[0m[31merror[0m] [0m[0m                           ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
