@@ -57,6 +57,29 @@ def tasuj(l1: List[Int], l2: List[Int]): List[Int]={
 println(tasuj(List(), List()))
 println(tasuj(List(2, 4, 3, 5), List(1, 2, 2, 3, 1, 5)))
 
+def tasuj2(l1: List[Int], l2: List[Int]): List[Int]={
+  def poboczna(l1: List[Int], l2: List[Int], w: List[Int]): List[Int] = (l1,l2,w) match {
+    
+    case (List(), List(), x) => x.reverse
+
+    case (List(), a::b, x::_) if x == a => poboczna(List(), b, w)
+    case (List(), a::b, _) => poboczna(List(), b, a::w)
+    
+    case (a::b, List(), x::_) if x == a => poboczna(b, List(), w)
+    case (a::b, List(), _) => poboczna(b, List(), a::w)
+    
+    case (a::b, c::d, x::_) if (c > a && x == a) => poboczna(b, c::d, w)
+    case (a::b, c::d, _) if c > a => poboczna(b,c::d, a::w)
+    
+    case (a::b, c::d, x::_) if (c == a && x == a) => poboczna(b, d, w)
+    case (a::b, c::d, _) if c == a => poboczna(b,d, a::w)
+    
+    case (a::b, c::d, x::_) if x == c => poboczna(a::b, d, w)
+    case (a::b, c::d, _) => poboczna(a::b,d, c::w)
+  }
+  poboczna(l1,l2,List())
+}
+println(tasuj2(List(2, 4, 3, 5), List(1, 2, 2, 3, 1, 5)))
 
 
 }
