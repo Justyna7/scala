@@ -97,4 +97,26 @@ def usun[A](l: List[A], el: A): List[A] ={
   poboczna(l,el,List[A]())
 }
 println(usun(List('A','b','e','C','d'),'e'))
+
+// Zadanie 4.
+// Zdefiniuj generyczną funkcję rekurencyjną:
+// def divide[A](l: List[A]): (List[A], List[A]) = /* ... */
+// która podzieli listę l na dwa elementy.
+// W pierwszej będą się znajdywać elementy na parzystych indeksach w drugiej elementy na nie parzystych.
+// Rozwiąż to zadanie wykorzystując rekurencję ogonową i dopasowanie wzorców (nie używaj metod head i tail).
+// Przykład:
+// Dla: List(1, 3, 5, 6, 7), funkcja powinna zwrócić: (List(1, 5, 7), List(3, 6)).
+def divide[A](l: List[A]): (List[A], List[A]) ={
+  def poboczna[A](l: List[A], a: List[A], b: List[A]): (List[A], List[A]) = l match{
+    case List() => (a.reverse,b.reverse)
+    case x::y => y match{
+      case i::j => poboczna(j, x::a,i::b)
+      case _ => poboczna(y,x::a,b)
+    }
+  }
+  poboczna(l,List[A](),List[A]())
+}
+println(divide(List('A','b','e','C','d')))
+println(divide(List('A','b','e','C')))
+println(divide(List()))
 }
