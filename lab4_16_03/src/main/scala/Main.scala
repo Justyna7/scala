@@ -81,5 +81,20 @@ def tasuj2(l1: List[Int], l2: List[Int]): List[Int]={
 }
 println(tasuj2(List(2, 4, 3, 5), List(1, 2, 2, 3, 1, 5)))
 
-
+// Zadanie 3.
+// Zdefiniuj generyczną funkcję rekurencyjną:
+// def usun[A](l: List[A], el: A): List[A] = /* ... */
+// która "usunie" z listy l wszystkie wystąpienia elementu el.
+// Rozwiąż to zadanie wykorzystując rekurencję ogonową i dopasowanie wzorców (nie używaj metod head i tail).
+// Przykład:
+// Dla: usun(List(2, 1, 4, 1, 3, 3, 1, 2), 1), funkcja powinna zwrócić: List(2, 4, 3, 3, 2).
+def usun[A](l: List[A], el: A): List[A] ={
+  def poboczna[A](l: List[A], el: A, wynik: List[A]):List[A] = l match{
+    case List() => wynik.reverse
+    case a::b if a == el => poboczna(b,el,wynik)
+    case a::b => poboczna(b,el,a::wynik)
+  }
+  poboczna(l,el,List[A]())
+}
+println(usun(List('A','b','e','C','d'),'e'))
 }
