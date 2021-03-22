@@ -1,3 +1,7 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(reStart, Some(9bc844e1-3757-445b-8093-312030dcb026), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: reStart[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to D:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab4_16_03\target\scala-2.13\classes ...[0m
 [0m[[0m[31merror[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab4_16_03\src\main\scala\Main.scala:136:20: not found: type A[0m
 [0m[[0m[31merror[0m] [0m[0mval andi[A]: (Pred[A],Pred[A]) = (p,q) => p&&q[0m
 [0m[[0m[31merror[0m] [0m[0m                   ^[0m
@@ -21,3 +25,6 @@
 [0m[[0m[33mwarn[0m] [0m[0m        ^[0m
 [0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
 [0m[[0m[31merror[0m] [0m[0m6 errors found[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mcompileIncremental[0m) Compilation failed[0m
+[0m[[0m[31merror[0m] [0m[0mTotal time: 0 s, completed 22 mar 2021, 03:50:10[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m

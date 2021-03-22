@@ -119,4 +119,31 @@ def divide[A](l: List[A]): (List[A], List[A]) ={
 println(divide(List('A','b','e','C','d')))
 println(divide(List('A','b','e','C')))
 println(divide(List()))
+
+// Zadanie 5.
+// Niech Pred[A] oznacza zbiór predykatów (własności) dla elementów typu A
+// type Pred[A] = A => Boolean
+// Zdefiniuj: koniunkcję, alternatywę, negację oraz implikację dla predykatów:
+// def and[A](p: Pred[A], q: Pred[A]): Pred[A]
+// def or[A](p: Pred[A], q: Pred[A]): Pred[A]
+// def not[A](p: Pred[A]): Pred[A]
+// def imp[A](p: Pred[A], q: Pred[A]): Pred[A]
+type Pred[A] = A => Boolean
+val test1: Pred[Int] = x => x > 5
+val test2: Pred[Int] = x => x % 2 == 0
+
+def and[A](p: Pred[A], q: Pred[A]): Pred[A] = (arg : A) => p(arg) && q(arg)
+def or[A](p: Pred[A], q: Pred[A]): Pred[A] = (arg : A) => p(arg) || q(arg)
+def not[A](p: Pred[A]): Pred[A] = (arg : A) => !p(arg) 
+def imp[A](p: Pred[A], q: Pred[A]): Pred[A] = (arg : A) => p(arg) && (!q(arg)) 
+ 
+println(test2(4))
+def a = and(test1, test2)(3)
+def b = or(test1, test2)(3)
+def c = not(test1)(3)
+def d = imp(test1, test2)(3)
+println(a)
+println(b)
+println(c)
+println(d)
 }
