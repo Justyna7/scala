@@ -1,0 +1,11 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(reStart, Some(b2e96018-934a-4257-88d0-19106878ed25), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: reStart[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to D:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab5_23_03\target\scala-2.13\classes ...[0m
+[0m[[0m[31merror[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab5_23_03\src\main\scala\Main.scala:24:54: wrong number of type parameters for method lift: [A, B, T](op: (T, T) => T)(f: A => T, g: B => T): (A, B) => T[0m
+[0m[[0m[31merror[0m] [0m[0mdef sum[A](s1: MSet[A], s2: MSet[A]): MSet[A] = {lift[A,Int](_+_)(s1,s2)}[0m
+[0m[[0m[31merror[0m] [0m[0m                                                     ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mcompileIncremental[0m) Compilation failed[0m
+[0m[[0m[31merror[0m] [0m[0mTotal time: 0 s, completed 23 mar 2021, 15:42:42[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m
