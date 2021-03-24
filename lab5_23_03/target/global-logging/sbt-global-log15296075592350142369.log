@@ -1,0 +1,17 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(reStart, Some(d0431787-3ec2-4ee7-a6a6-283a48d558bc), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: reStart[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to D:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab5_23_03\target\scala-2.13\classes ...[0m
+[0m[[0m[31merror[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab5_23_03\src\main\scala\Main.scala:24:63: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : (A, A) => Int[0m
+[0m[[0m[31merror[0m] [0m[0m required: Main.MSet[A][0m
+[0m[[0m[31merror[0m] [0m[0m    (which expands to)  A => Int[0m
+[0m[[0m[31merror[0m] [0m[0mdef sum[A](s1: MSet[A], s2: MSet[A]): MSet[A] = {lift[A,A,Int](_+_)(s1,s2)}[0m
+[0m[[0m[31merror[0m] [0m[0m                                                              ^[0m
+[0m[[0m[0minfo[0m] [0m[0m(A, A) => Int <: Main.MSet[A]?[0m
+[0m[[0m[0minfo[0m] [0m[0mfalse[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mcompileIncremental[0m) Compilation failed[0m
+[0m[[0m[31merror[0m] [0m[0mTotal time: 0 s, completed 23 mar 2021, 15:44:59[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m
+[0m[[0m[0mdebug[0m] [0m[0mForcing garbage collection...[0m

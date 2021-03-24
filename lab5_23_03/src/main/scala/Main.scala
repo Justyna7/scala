@@ -7,7 +7,7 @@ def compose[A, B, C](f: A => B)(g: B => C): A => C = {n:A => g(f(n))}
 def prod[A, B, C, D](f: A => C, g: B => D): (A, B) => (C, D) = {(n:A,m:B) =>(f(n),g(m))}
 // podniesienie operatora op: (T, T) => T
 def lift[A, B, T](op: (T,T) => T)(f: A => T, g: B => T): (A,B) => T = {(n,m) => op(f(n),g(m))}
-
+//def x[A,T](f: (A,A) => T): A => T = {}
 
 // Zadanie 2.
 // Zdefiniuj następujące generyczne operujące na funkcjach:
@@ -21,12 +21,19 @@ val a:MSet[Int] = (n: Int) => n match {
 }
 // Korzystając z funkcji w podpunkcie a zdefiniuj funkcję wykonujące operację:
 // sumy, różnicy oraz części wspólnej dla wielozbiorów:
-def sum[A](s1: MSet[A], s2: MSet[A]): MSet[A] = {lift[A,Int](_+_)(s1,s2)}
-// def diff[A](s1: MSet[A], s2: MSet[A]): MSet[A] = {
-//   //val r: (Int, Int)=> Int = (n,m) => n-m max 0
-//   //lift(r)(s1,s2)
-//   }
-// def mult[A](s1: MSet[A], s2: MSet[A]): MSet[A] = {lift[A,Int]((n,m) => n min m)(s1,s2) }
+def sum[A](s1: MSet[A], s2: MSet[A]): MSet[A] = {
+    val abc:(Int,Int) => Int = (m,n) => m+n 
+    n => lift[A,A,Int](abc)(s1,s2)(n,n)
+    //n => lift[A,A,Int](_+_)(s1,s2)(n,n) // alternatywny zapis
+    }
+def diff[A](s1: MSet[A], s2: MSet[A]): MSet[A] = {
+    val r: (Int, Int)=> Int = (n,m) => n-m max 0
+    n => lift(r)(s1,s2)(n,n)
+    }
+def mult[A](s1: MSet[A], s2: MSet[A]): MSet[A] = {
+    val m: (Int, Int) => Int = (n,m) => n min m
+    n => lift[A,A,Int](m)(s1,s2)(n,n)
+    }
 
 
 
