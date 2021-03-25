@@ -50,6 +50,23 @@ def mult[A](s1: MSet[A], s2: MSet[A]): MSet[A] = {
 // która wstawi element a do sekwencji l zgodnie z porządkiem określonym przez leq.
 // Przykład:
 // Dla: l = List(1, 2, 4, 6), el = 3 i leq = (_ < _), funkcja powinna zwrócić: List(1, 2, 3, 4, 6).
+def insertInto[A](l: List[A], el: A)(leq: (A, A) => Boolean): List[A] = {
+    def poboczna[A](l: List[A], el: A, l2: List[A])(leq: (A, A) => Boolean): List[A] = {
+        def p[A](l: List[A], l2: List[A]): List[A] = l match{
+            case List() => l2
+            case a :: b => p(b,a::l2)
+        }
+        l match{
+            case List() => l2
+            case a :: b if leq(a,el) => p(b,el::a::l2)
+        }
+        
+    }
+    l match{
+        case List() => el::l
+        case _ => poboczna(l,el,List[A]())(leq)
+    }
+}
 
 // Zadanie 4. Zdefiniuj generyczną funkcję rekurencyjną:
 // def compress[A](l: List[A]): List[(A, Int)] = /* ... */
