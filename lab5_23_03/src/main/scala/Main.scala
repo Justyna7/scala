@@ -70,10 +70,23 @@ def insertInto[A](l: List[A], el: A)(leq: (A, A) => Boolean): List[A] = {
 
 // Zadanie 4. Zdefiniuj generyczną funkcję rekurencyjną:
 // def compress[A](l: List[A]): List[(A, Int)] = /* ... */
-// która zastąpi każdy element listy l parą (element, długość_podciągu). Zdefiniuj funkcję z użyciem rekurencji ogonowej. Nie używaj metod head i tail.
+// która zastąpi każdy element listy l parą (element, długość_podciągu). Zdefiniuj funkcję z użyciem rekurencji ogonowej.
+// Nie używaj metod head i tail.
 // Przykład:
 // Dla: l = List('a', 'a', 'b', 'c', 'c', 'c', 'a', 'a', 'b', 'd'), funkcja powinna zwrócić: List(('a', 2), ('b', 1), ('c', 3), ('a', 2), ('b', 1), ('d', 1)).
-
+def compress[A](l: List[A]): List[(A, Int)] ={
+    def poboczna[A](l: List[A], l2:List[(A,Int)] ): List[(A, Int)] = l match{
+        case List() => l2.reverse
+        case a::b => l2 match {
+            case List() => poboczna(b, (a, 1)::l2)
+            case x::y if x._1 == a => poboczna(b,(x._1,x._2+1)::y)
+            case _ => poboczna(b, (a,1)::l2)
+        } 
+    }
+    poboczna(l, List())
+}
+val l = List('a', 'a', 'b', 'c', 'c', 'c', 'a', 'a', 'b', 'd')
+println(compress(l))
 // Zadanie 5. Zdefiniuj generyczną funkcję rekurencyjną:
 // def compute[A, B](l: List[A], init: B)(op: (A, B) => B): B = /* ... */
 // która korzystając z wartości początkowej oraz funkcji op oblicz "wartość" ciągu l. Zdefiniuj funkcję z użyciem rekurencji ogonowej.
