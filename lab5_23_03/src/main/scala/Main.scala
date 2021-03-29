@@ -89,10 +89,23 @@ val l = List('a', 'a', 'b', 'c', 'c', 'c', 'a', 'a', 'b', 'd')
 println(compress(l))
 // Zadanie 5. Zdefiniuj generyczną funkcję rekurencyjną:
 // def compute[A, B](l: List[A], init: B)(op: (A, B) => B): B = /* ... */
-// która korzystając z wartości początkowej oraz funkcji op oblicz "wartość" ciągu l. Zdefiniuj funkcję z użyciem rekurencji ogonowej.
+// która korzystając z wartości początkowej oraz funkcji op oblicz "wartość" ciągu l.
+// Zdefiniuj funkcję z użyciem rekurencji ogonowej.
 // Przykłady:
 // Dla: l = List(1, 2, 3, 4), init = 0, op = (_ + _), funkcja powinna zwrócić: 10.
 // Dla: l = List(1, 2, 3, 4), init = 1, op = (_ * _), funkcja powinna zwrócić: 24.
 // Dla: l = List("kota"," ","ma"," ","ala"), init = "", op = (_ + _), funkcja powinna zwrócić: "ala ma kota".
-
+def compute[A, B](l: List[A], init: B)(op: (A, B) => B): B = {
+    def poboczna[A, B](l: List[A], buf: B)(op: (A, B) => B): B = l match{
+        case List() => buf
+        case a::b => poboczna(b,op(a, buf))(op)
+    }
+    l match {
+        case List() => init
+        case a::b => poboczna(b,op(a, init))(op)
+    }
+}
+println(compute(List(1, 2, 3, 4),0)(_ + _))
+println(compute(List(1, 2, 3, 4),1)(_ * _))
+println(compute(List("kota"," ","ma"," ","ala"),"")(_ + _))
 }
