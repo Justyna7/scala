@@ -1,0 +1,8 @@
+[0m[[0m[31merror[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab6_30_03\src\main\scala\Main.scala:18:40: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : Unit[0m
+[0m[[0m[31merror[0m] [0m[0m required: Seq[A][0m
+[0m[[0m[31merror[0m] [0m[0m  seq.foldLeft(Seq(seq.head))((x,y) =>{if (y != x.head) y+:x} )[0m
+[0m[[0m[31merror[0m] [0m[0m                                       ^[0m
+[0m[[0m[0minfo[0m] [0m[0mUnit <: Seq[A]?[0m
+[0m[[0m[0minfo[0m] [0m[0mfalse[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

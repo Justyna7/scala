@@ -1,8 +1,0 @@
-[0m[[0m[0mdebug[0m] [0m[0m> Exec(reStar, Some(7628ede5-fc91-4365-9a62-9726214024fa), Some(CommandSource(console0)))[0m
-[0m[[0m[31merror[0m] [0m[0mNot a valid command: reStar (similar: set, reboot, reload)[0m
-[0m[[0m[31merror[0m] [0m[0mNot a valid project ID: reStar[0m
-[0m[[0m[31merror[0m] [0m[0mExpected ':'[0m
-[0m[[0m[31merror[0m] [0m[0mNot a valid key: reStar (similar: reStart, reStartArgs, reStatus)[0m
-[0m[[0m[31merror[0m] [0m[0mreStar[0m
-[0m[[0m[31merror[0m] [0m[0m      ^[0m
-[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m
