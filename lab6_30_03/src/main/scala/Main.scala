@@ -24,6 +24,10 @@ println(deStutter(Seq(1, 1, 2, 4, 4, 4, 1, 3)))
 // def remElems[A](seq: Seq[A], k: Int): Seq[A] = /* ... */
 // która usunie k-ty element sekwencji seq.
 
+def remElems[A](seq: Seq[A], k: Int): Seq[A] = {
+  seq.zipWithIndex.filter((x) => x._2 != k).map((x) => x._1)
+}
+println(remElems(Seq(1, 2, 3, 4, 5, 6, 7, 8), 3))
 
 
 // Zadanie 4.
@@ -33,6 +37,8 @@ println(deStutter(Seq(1, 1, 2, 4, 4, 4, 1, 3)))
 // Przykład:
 // Dla set = Set('a','b','a','c','c','a') funkcja powinna zwrócić Set(('a', 3),('b', 1),('c', 2)).
 
+// def freq[A](seq: Seq[A]): Set[(A, Int)] 
+// println(freq(Set('a','b','a','c','c','a')))
 
 
 // Zadanie 5.
@@ -43,6 +49,8 @@ println(deStutter(Seq(1, 1, 2, 4, 4, 4, 1, 3)))
 // Dla seq = Seq(1, 2, 2, 4) i (_ < _) funkcja powinna zwrócić false.
 // Dla seq = Seq(1, 2, 2, 4) i (_ <= _) funkcja powinna zwrócić true.
 
+// def isOrdered[A](seq: Seq[A])(leq:(A, A) => Boolean): Boolean =
+// println(isOrdered(Seq(1, 2, 2, 4))(_ < _))
 
 
 // Zadanie 6.
@@ -51,5 +59,6 @@ println(deStutter(Seq(1, 1, 2, 4, 4, 4, 1, 3)))
 // która wylicza ile różnych znaków, użyto w napisie str.
 // Podpowiedź: pomyśl o wykorzystaniu jednej z metod konwersji.
 
-
+// def countChars(str: String): Int
+// println(countChars("ADGdfgh"))
 }
