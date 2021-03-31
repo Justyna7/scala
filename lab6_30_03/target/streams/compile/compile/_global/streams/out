@@ -1,4 +1,6 @@
-[0m[[0m[31merror[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab6_30_03\src\main\scala\Main.scala:28:57: ')' expected but double literal found.[0m
-[0m[[0m[31merror[0m] [0m[0m  seq.zipWithIndex.filter((x) => x._2 != k).map((x) => _.1)[0m
-[0m[[0m[31merror[0m] [0m[0m                                                        ^[0m
+[0m[[0m[31merror[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab6_30_03\src\main\scala\Main.scala:43:17: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : scala.collection.immutable.Set[Char][0m
+[0m[[0m[31merror[0m] [0m[0m required: Seq[?][0m
+[0m[[0m[31merror[0m] [0m[0mprintln(freq(Set('a','b','a','c','c','a')))[0m
+[0m[[0m[31merror[0m] [0m[0m                ^[0m
 [0m[[0m[31merror[0m] [0m[0mone error found[0m

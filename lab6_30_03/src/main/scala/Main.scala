@@ -37,8 +37,11 @@ println(remElems(Seq(1, 2, 3, 4, 5, 6, 7, 8), 3))
 // Przykład:
 // Dla set = Set('a','b','a','c','c','a') funkcja powinna zwrócić Set(('a', 3),('b', 1),('c', 2)).
 
-// def freq[A](seq: Seq[A]): Set[(A, Int)] 
-// println(freq(Set('a','b','a','c','c','a')))
+def freq[A](seq: Seq[A]): Set[(A, Int)] ={
+  seq.groupBy(x => x).map(x => (x._1, x._2.size)).toSet
+}
+println(freq(Seq('a','b','a','c','c','a')))
+//println(Seq('a','b','a','c','c','a').groupBy(x => x).map(x => (x._1, x._2.size)).toSet)
 
 
 // Zadanie 5.

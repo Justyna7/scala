@@ -1,8 +1,9 @@
-[0m[[0m[0mdebug[0m] [0m[0m> Exec(reStart, Some(f06f4585-db85-44e6-be1f-c9c451080831), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(reStart, Some(9d38f83c-f80a-452c-9739-609d18c72592), Some(CommandSource(console0)))[0m
 [0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: reStart[0m
 [0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
 [0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to D:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab6_30_03\target\scala-2.13\classes ...[0m
 [0m[[0m[0minfo[0m] [0m[0m[33mApplication [0m[1mlab6_30_03[0m[33m not yet started[0m
-[0m[[0m[0minfo[0m] [0m[0m[33mStarting application [0m[34mlab6_30_03[0m[33m in the background ...[0m
-[0m[[0m[32msuccess[0m] [0m[0mTotal time: 1 s, completed 31 mar 2021, 10:53:16[0m
+[0m[[0m[0minfo[0m] [0m[0m[33mStarting application [0m[35mlab6_30_03[0m[33m in the background ...[0m
+[0m[[0m[32msuccess[0m] [0m[0mTotal time: 0 s, completed 31 mar 2021, 11:47:45[0m
 [0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m
+[0m[[0m[0mdebug[0m] [0m[0mForcing garbage collection...[0m
