@@ -1,6 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab6_30_03\src\main\scala\Main.scala:43:17: type mismatch;[0m
-[0m[[0m[31merror[0m] [0m[0m found   : scala.collection.immutable.Set[Char][0m
-[0m[[0m[31merror[0m] [0m[0m required: Seq[?][0m
-[0m[[0m[31merror[0m] [0m[0mprintln(freq(Set('a','b','a','c','c','a')))[0m
-[0m[[0m[31merror[0m] [0m[0m                ^[0m
+[0m[[0m[31merror[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab6_30_03\src\main\scala\Main.scala:59:55: missing parameter type for expanded function ((<x$1: error>) => x$1.head)[0m
+[0m[[0m[31merror[0m] [0m[0m  seq.sliding(2,1).map((x)=> leq(x(0),x(1))).foldLeft(_.head)(_ && _)[0m
+[0m[[0m[31merror[0m] [0m[0m                                                      ^[0m
 [0m[[0m[31merror[0m] [0m[0mone error found[0m

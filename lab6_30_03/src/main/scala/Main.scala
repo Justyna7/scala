@@ -3,10 +3,12 @@ object Main extends App {
 // Korzystając z metod drop i take zdefiniuj funkcję:
 // def subSeq[A](seq: Seq[A], begIdx: Int, endIdx: Int): Seq[A] = /* ... */
 // która zwraca podciąg ciągów sekwencji seq z przedziału od indeksu begIdx do endIdx.
+
 def subSeq[A](seq: Seq[A], begIdx: Int, endIdx: Int): Seq[A] ={
   seq.take(endIdx).drop(begIdx)
 }
 println(subSeq(Seq(1,7,10,5,3,7,2,8),3,5))
+
 
 // Zadanie 2.
 // Korzystając z metody foldLeft/foldRight i zdefiniuj generyczną funkcję:
@@ -14,10 +16,12 @@ println(subSeq(Seq(1,7,10,5,3,7,2,8),3,5))
 // która usunie z sekwencji seq wszystkie powtarzające się ciągi.
 // Przykład:
 // Dla: seq = Seq(1, 1, 2, 4, 4, 4, 1, 3), funkcja powinna zwrócić: Seq(1, 2, 4, 1, 3).
+
 def deStutter[A](seq: Seq[A]): Seq[A] ={
   seq.foldLeft(Seq(seq.head))((buf,y) =>{if (y != buf.head) y+:buf  else buf} ).reverse    
 }
 println(deStutter(Seq(1, 1, 2, 4, 4, 4, 1, 3)))
+
 
 // Zadanie 3.
 // Korzystając z metod filter, map i zipWithIndex zdefiniuj funkcję:
@@ -41,7 +45,6 @@ def freq[A](seq: Seq[A]): Set[(A, Int)] ={
   seq.groupBy(x => x).map(x => (x._1, x._2.size)).toSet
 }
 println(freq(Seq('a','b','a','c','c','a')))
-//println(Seq('a','b','a','c','c','a').groupBy(x => x).map(x => (x._1, x._2.size)).toSet)
 
 
 // Zadanie 5.
@@ -52,9 +55,11 @@ println(freq(Seq('a','b','a','c','c','a')))
 // Dla seq = Seq(1, 2, 2, 4) i (_ < _) funkcja powinna zwrócić false.
 // Dla seq = Seq(1, 2, 2, 4) i (_ <= _) funkcja powinna zwrócić true.
 
-// def isOrdered[A](seq: Seq[A])(leq:(A, A) => Boolean): Boolean =
-// println(isOrdered(Seq(1, 2, 2, 4))(_ < _))
-
+def isOrdered[A](seq: Seq[A])(leq:(A, A) => Boolean): Boolean = {
+  seq.sliding(2,1).map((x)=> leq(x(0),x(1))).foldLeft(true)(_ && _)
+}
+println(isOrdered(Seq(1, 2, 2, 4))(_ < _))
+println(isOrdered(Seq(1, 2, 2, 4))(_ <= _))
 
 // Zadanie 6.
 // Korzystając z metod oferowanych przez kolekcje iterowalne (Iterable[A]) napisz funkcję
