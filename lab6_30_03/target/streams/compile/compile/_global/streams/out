@@ -1,4 +1,5 @@
-[0m[[0m[31merror[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab6_30_03\src\main\scala\Main.scala:59:55: missing parameter type for expanded function ((<x$1: error>) => x$1.head)[0m
-[0m[[0m[31merror[0m] [0m[0m  seq.sliding(2,1).map((x)=> leq(x(0),x(1))).foldLeft(_.head)(_ && _)[0m
-[0m[[0m[31merror[0m] [0m[0m                                                      ^[0m
+[0m[[0m[31merror[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab6_30_03\src\main\scala\Main.scala:71:13: value lenght is not a member of List[Char][0m
+[0m[[0m[31merror[0m] [0m[0mdid you mean length?[0m
+[0m[[0m[31merror[0m] [0m[0m str.toList.lenght[0m
+[0m[[0m[31merror[0m] [0m[0m            ^[0m
 [0m[[0m[31merror[0m] [0m[0mone error found[0m

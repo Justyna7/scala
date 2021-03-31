@@ -67,6 +67,8 @@ println(isOrdered(Seq(1, 2, 2, 4))(_ <= _))
 // która wylicza ile różnych znaków, użyto w napisie str.
 // Podpowiedź: pomyśl o wykorzystaniu jednej z metod konwersji.
 
-// def countChars(str: String): Int
-// println(countChars("ADGdfgh"))
+def countChars(str: String): Int ={
+ str.toList.groupBy(x => x).size
+}
+println(countChars("ADGhdfghA"))
 }
