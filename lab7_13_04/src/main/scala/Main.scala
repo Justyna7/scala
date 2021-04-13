@@ -15,11 +15,14 @@ println(indices(n,1))
 // która zamieni kolejnością wartości znajdujących się na parzystych i nieparzystych indeksach.
 // Przykład:
 // Dla: seq = Seq(1, 2, 3, 4, 5), Seq(2, 1, 4, 3, 5).
-
+def swap[A](seq: Seq[A]): Seq[A] = {
+  seq.grouped(2).foldLeft(List[Seq[A]]())((x,y)=> y :: x).flatten.reverse.toSeq
+}
+println(swap(Seq(1, 2, 3, 4, 5)))
 // Zadanie 3. Korzystając z metod oferowanych przez kolekcje zdefiniuj funkcję:
 // def minNotContained(set: Set[Int]): Int = /* ... */
 // która zwróci najmniejszą nieujemną liczbę całkowitą, która nie występuje w zbiorze set.
-// Przykład:
+// Przykład:  
 // Dla: set = Set(-3, 0, 1, 2, 5, 6), funkcja powinna zwrócić: 3.
 
 // Zadanie 4. Korzystając z ciągu wszystkich stref czasowych (postaci Kontynent/Strefa):
