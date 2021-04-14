@@ -24,6 +24,8 @@ println(swap(Seq(1, 2, 3, 4, 5)))
 // która zwróci najmniejszą nieujemną liczbę całkowitą, która nie występuje w zbiorze set.
 // Przykład:  
 // Dla: set = Set(-3, 0, 1, 2, 5, 6), funkcja powinna zwrócić: 3.
+//def minNotContained(set: Set[Int]): Int =
+println(Set(-3, 0, 1, 2, 5, 6).filter(_>=0).toList.sorted.foldLeft(0)((x,y)=> if(x == y) x+1 else x))
 
 // Zadanie 4. Korzystając z ciągu wszystkich stref czasowych (postaci Kontynent/Strefa):
 // val strefy: Seq[String] = java.util.TimeZone.getAvailableIDs.toSeq
