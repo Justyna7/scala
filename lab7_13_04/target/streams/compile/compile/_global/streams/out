@@ -1,15 +1,6 @@
-[0m[[0m[31merror[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab7_13_04\src\main\scala\Main.scala:19:53: type mismatch;[0m
-[0m[[0m[31merror[0m] [0m[0m found   : Seq[A][0m
-[0m[[0m[31merror[0m] [0m[0m required: Seq[Int][0m
-[0m[[0m[31merror[0m] [0m[0m  seq.grouped(2).foldLeft(List[Seq[Int]]())((x,y)=> y :: x).flatten.toSeq[0m
-[0m[[0m[31merror[0m] [0m[0m                                                    ^[0m
-[0m[[0m[0minfo[0m] [0m[0mSeq[A] <: Seq[Int]?[0m
-[0m[[0m[0minfo[0m] [0m[0mfalse[0m
-[0m[[0m[31merror[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab7_13_04\src\main\scala\Main.scala:19:69: type mismatch;[0m
-[0m[[0m[31merror[0m] [0m[0m found   : List[Int][0m
-[0m[[0m[31merror[0m] [0m[0m required: Seq[A][0m
-[0m[[0m[31merror[0m] [0m[0m  seq.grouped(2).foldLeft(List[Seq[Int]]())((x,y)=> y :: x).flatten.toSeq[0m
-[0m[[0m[31merror[0m] [0m[0m                                                                    ^[0m
-[0m[[0m[0minfo[0m] [0m[0mList[Int] <: Seq[A]?[0m
-[0m[[0m[0minfo[0m] [0m[0mfalse[0m
-[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
+[0m[[0m[31merror[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab7_13_04\src\main\scala\Main.scala:47:103: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : String[0m
+[0m[[0m[31merror[0m] [0m[0m required: scala.collection.IterableOnce[String][0m
+[0m[[0m[31merror[0m] [0m[0mval pref2 = strefy.filter(x => x.startsWith("Europe/")).foldLeft(Seq[String]())((a,b) => b.stripPrefix("Europe/")++:a).sorted.sortBy(_.length)[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                                      ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

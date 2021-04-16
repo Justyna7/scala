@@ -24,8 +24,10 @@ println(swap(Seq(1, 2, 3, 4, 5)))
 // która zwróci najmniejszą nieujemną liczbę całkowitą, która nie występuje w zbiorze set.
 // Przykład:  
 // Dla: set = Set(-3, 0, 1, 2, 5, 6), funkcja powinna zwrócić: 3.
-//def minNotContained(set: Set[Int]): Int =
-println(Set(-3, 0, 1, 2, 5, 6).filter(_>=0).toList.sorted.foldLeft(0)((x,y)=> if(x == y) x+1 else x))
+def minNotContained(set: Set[Int]): Int ={
+  set.filter(_>=0).toList.sorted.foldLeft(0)((x,y)=> if(x == y) x+1 else x)
+}
+println(minNotContained(Set(-3, 0, 1, 2, 5, 6)))
 
 // Zadanie 4. Korzystając z ciągu wszystkich stref czasowych (postaci Kontynent/Strefa):
 // val strefy: Seq[String] = java.util.TimeZone.getAvailableIDs.toSeq
@@ -36,6 +38,19 @@ println(Set(-3, 0, 1, 2, 5, 6).filter(_>=0).toList.sorted.foldLeft(0)((x,y)=> if
 // def stripPrefix(prefix: String): String
 // która usuwa podany prefiks z napisu, np.
 // "ala ma kota".stripPrefix("ala ") -> "ma kota"
+val strefy: Seq[String] = java.util.TimeZone.getAvailableIDs.toSeq
+val pref = strefy.toList.foldLeft(List[List[String]]())((a,b) => b.split("/").toList::a)
+.reverse.filter(x => x(0) == "Europe")
+.flatten.filter(x => x != "Europe").sorted.sortBy(_.length)
+println(pref)
+println("")
+val e = "Europe/"
+val pref2 = strefy.filter(x => x.startsWith(e))
+.foldLeft(Seq[String]())((a,b) => b.stripPrefix(e)+:a)
+.sorted.sortBy(_.length)
+println(pref2)
+val pref3 = strefy.filter(_.startsWith(e)).map(_.stripPrefix(e)).sorted.sortBy(_.length)
+println(pref3)
 
 // Zadanie 5. Gra MaterMind polega na odgadnięciu w jakich miejscach zostały umieszczone n ukrytych kul,
 // które są oznaczone powtarzającymi się kolorami.
