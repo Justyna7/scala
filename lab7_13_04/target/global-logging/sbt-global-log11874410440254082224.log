@@ -1,3 +1,7 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(reStart, Some(3bbb0f2c-a205-42e5-8ed8-6a36f988a280), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: reStart[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to D:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab7_13_04\target\scala-2.13\classes ...[0m
 [0m[[0m[31merror[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab7_13_04\src\main\scala\Main.scala:71:38: missing parameter type for expanded function ((<x$7: error>, x$8) => x$7._1.$eq$eq(x$8._2))[0m
 [0m[[0m[31merror[0m] [0m[0mNote: The expected type requires a one-argument function accepting a 2-Tuple.[0m
 [0m[[0m[31merror[0m] [0m[0m      Consider a pattern matching anonymous function, `{ case (x$7, x$8) =>  ... }`[0m
@@ -7,3 +11,6 @@
 [0m[[0m[31merror[0m] [0m[0m  val czarne = code.zip(move).filter(_._1 == _._2).length//.filter(x => x._1 == x._2).length[0m
 [0m[[0m[31merror[0m] [0m[0m                                             ^[0m
 [0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mcompileIncremental[0m) Compilation failed[0m
+[0m[[0m[31merror[0m] [0m[0mTotal time: 0 s, completed 17 kwi 2021, 02:47:55[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m

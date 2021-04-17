@@ -64,7 +64,15 @@ println(pref3)
 // Przykład:
 // def score(code: Seq[Int])(move: Seq[Int]): (Int, Int)
 // Przykład:
-// val code = Seq(1, 3, 2, 2, 4, 5)
-// val move = Seq(2, 1, 2, 4, 7, 2)
+ val code = Seq(1, 3, 2, 2, 4, 5)
+ val move = Seq(2, 1, 2, 4, 7, 2)
 // Funkcja powinna zwrócić: (1, 3)
+def score(code: Seq[Int])(move: Seq[Int]): (Int, Int) = {
+  val czarne = code.zip(move).filter(x => x._1 == x._2).length
+  val c = code.groupMapReduce(identity)(x => code.count(_ == x))((x,y)=>y).toList
+  val m = move.groupMapReduce(identity)(x => code.count(_ == x))((x,y)=>y).toList
+  val biale = c.intersect(m).foldLeft(0)(_+_._2) - czarne
+  (czarne, biale)
+}
+println(score(code)(move))
 }
