@@ -1,0 +1,9 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(reStart, Some(1d76288f-2957-4301-9453-238c97785f34), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: reStart[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[33mwarn[0m] [0m[0mmultiple main classes detected: run 'show discoveredMainClasses' to see the list[0m
+[0m[[0m[0minfo[0m] [0m[0m[33mApplication [0m[1mlab8_20_04[0m[33m not yet started[0m
+[0m[[0m[0minfo[0m] [0m[0m[33mStarting application [0m[34mlab8_20_04[0m[33m in the background ...[0m
+[0m[[0m[32msuccess[0m] [0m[0mTotal time: 2 s, completed 20 kwi 2021, 19:51:19[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m
+[0m[[0m[0mdebug[0m] [0m[0mForcing garbage collection...[0m

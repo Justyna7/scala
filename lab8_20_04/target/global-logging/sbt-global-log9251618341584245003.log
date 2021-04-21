@@ -1,0 +1,20 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(reStart, Some(3cfbd9c1-0752-4627-88a7-3180e7715248), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: reStart[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 2 Scala sources to D:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab8_20_04\target\scala-2.13\classes ...[0m
+[0m[[0m[33mwarn[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab8_20_04\src\main\scala\Zad2.scala:9:8: Auto-application to `()` is deprecated. Supply the empty argument list `()` explicitly to invoke method getLines,[0m
+[0m[[0m[33mwarn[0m] [0m[0mor remove the empty argument list from its definition (Java-defined methods are exempt).[0m
+[0m[[0m[33mwarn[0m] [0m[0mIn Scala 3, an unapplied method like this will be eta-expanded into a function.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      .getLines.toList.map(x => x.split(' ').toList)[0m
+[0m[[0m[33mwarn[0m] [0m[0m       ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab8_20_04\src\main\scala\Zad3.scala:25:8: Auto-application to `()` is deprecated. Supply the empty argument list `()` explicitly to invoke method getLines,[0m
+[0m[[0m[33mwarn[0m] [0m[0mor remove the empty argument list from its definition (Java-defined methods are exempt).[0m
+[0m[[0m[33mwarn[0m] [0m[0mIn Scala 3, an unapplied method like this will be eta-expanded into a function.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      .getLines.toList[0m
+[0m[[0m[33mwarn[0m] [0m[0m       ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mtwo warnings found[0m
+[0m[[0m[33mwarn[0m] [0m[0mmultiple main classes detected: run 'show discoveredMainClasses' to see the list[0m
+[0m[[0m[0minfo[0m] [0m[0m[33mApplication [0m[1mlab8_20_04[0m[33m not yet started[0m
+[0m[[0m[0minfo[0m] [0m[0m[33mStarting application [0m[34mlab8_20_04[0m[33m in the background ...[0m
+[0m[[0m[32msuccess[0m] [0m[0mTotal time: 39 s, completed 20 kwi 2021, 16:15:04[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m

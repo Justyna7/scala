@@ -1,0 +1,16 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(reStart, Some(6f8ab14c-588a-43ea-85d9-9cc41a0ced03), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: reStart[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to D:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab8_20_04\target\scala-2.13\classes ...[0m
+[0m[[0m[33mwarn[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab8_20_04\src\main\scala\Zad3.scala:25:8: Auto-application to `()` is deprecated. Supply the empty argument list `()` explicitly to invoke method getLines,[0m
+[0m[[0m[33mwarn[0m] [0m[0mor remove the empty argument list from its definition (Java-defined methods are exempt).[0m
+[0m[[0m[33mwarn[0m] [0m[0mIn Scala 3, an unapplied method like this will be eta-expanded into a function.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      .getLines.toList[0m
+[0m[[0m[33mwarn[0m] [0m[0m       ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
+[0m[[0m[33mwarn[0m] [0m[0mmultiple main classes detected: run 'show discoveredMainClasses' to see the list[0m
+[0m[[0m[0minfo[0m] [0m[0m[33mApplication [0m[1mlab8_20_04[0m[33m not yet started[0m
+[0m[[0m[0minfo[0m] [0m[0m[33mStarting application [0m[35mlab8_20_04[0m[33m in the background ...[0m
+[0m[[0m[32msuccess[0m] [0m[0mTotal time: 2 s, completed 20 kwi 2021, 16:15:26[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m
+[0m[[0m[0mdebug[0m] [0m[0mForcing garbage collection...[0m
