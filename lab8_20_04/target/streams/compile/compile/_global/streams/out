@@ -1,6 +1,14 @@
-[0m[[0m[33mwarn[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab8_20_04\src\main\scala\Zad3.scala:25:8: Auto-application to `()` is deprecated. Supply the empty argument list `()` explicitly to invoke method getLines,[0m
+[0m[[0m[33mwarn[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab8_20_04\src\main\scala\Zad4.scala:48:8: Auto-application to `()` is deprecated. Supply the empty argument list `()` explicitly to invoke method getLines,[0m
 [0m[[0m[33mwarn[0m] [0m[0mor remove the empty argument list from its definition (Java-defined methods are exempt).[0m
 [0m[[0m[33mwarn[0m] [0m[0mIn Scala 3, an unapplied method like this will be eta-expanded into a function.[0m
-[0m[[0m[33mwarn[0m] [0m[0m      .getLines.toList.map(x => x.toList).flatten.filter(x => x.isLetter).map(x => x.toString.toLowerCase)[0m
+[0m[[0m[33mwarn[0m] [0m[0m      .getLines[0m
 [0m[[0m[33mwarn[0m] [0m[0m       ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
+[0m[[0m[33mwarn[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab8_20_04\src\main\scala\Zad4.scala:51:33: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following inputs: List(_), Nil[0m
+[0m[[0m[33mwarn[0m] [0m[0m         l.split(",").toList.map(_.toInt) match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab8_20_04\src\main\scala\Zad4.scala:77:73: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following inputs: List(_), Nil[0m
+[0m[[0m[33mwarn[0m] [0m[0m    val ktore = procent.filter(x => x._2(0)-x._2(4) == mini).map(x => x._2 match{ [0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                        ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mthree warnings found[0m
