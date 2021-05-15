@@ -1,28 +1,28 @@
 [0m[[0m[0mdebug[0m] [0m[0m[zinc] IncrementalCompile -----------[0m
 [0m[[0m[0mdebug[0m] [0m[0mIncrementalCompile.incrementalCompile[0m
-[0m[[0m[0mdebug[0m] [0m[0mprevious = Stamps for: 26 products, 4 sources, 2 libraries[0m
+[0m[[0m[0mdebug[0m] [0m[0mprevious = Stamps for: 32 products, 4 sources, 2 libraries[0m
 [0m[[0m[0mdebug[0m] [0m[0mcurrent source = Set(${BASE}/src/main/scala/Zad1.scala, ${BASE}/src/main/scala/Zad2.scala, ${BASE}/src/main/scala/Zad3.scala, ${BASE}/src/main/scala/Zad4.scala)[0m
-[0m[[0m[0mdebug[0m] [0m[0m> initialChanges = InitialChanges(Changes(added = Set(), removed = Set(), changed = Set(${BASE}/src/main/scala/Zad1.scala), unmodified = ...),Set(),Set(),API Changes: Set())[0m
+[0m[[0m[0mdebug[0m] [0m[0m> initialChanges = InitialChanges(Changes(added = Set(), removed = Set(), changed = Set(${BASE}/src/main/scala/Zad2.scala), unmodified = ...),Set(),Set(),API Changes: Set())[0m
 [0m[[0m[0mdebug[0m] [0m[0m[0m
 [0m[[0m[0mdebug[0m] [0m[0mInitial source changes:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	removed: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0m	added: Set()[0m
-[0m[[0m[0mdebug[0m] [0m[0m	modified: Set(${BASE}/src/main/scala/Zad1.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	modified: Set(${BASE}/src/main/scala/Zad2.scala)[0m
 [0m[[0m[0mdebug[0m] [0m[0mInvalidated products: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0mExternal API changes: API Changes: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0mModified binary dependencies: Set()[0m
-[0m[[0m[0mdebug[0m] [0m[0mInitial directly invalidated classes: Set(Lab10.Zad1, Lab10.Zad1.Aktor, Lab10.Zad1.Pracownik, Lab10.Zad1.Rozwiazanie, Lab10.Zad1.Wynik, Lab10.Zad1.Zmien)[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial directly invalidated classes: Set(Lab10.Zad2.Graj, Lab10.Zad2.Gracz, Lab10.Zad2.Piłeczka, Lab10.Zad2)[0m
 [0m[[0m[0mdebug[0m] [0m[0mSources indirectly invalidated by:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	product: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0m	binary dep: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0m	external source: Set()[0m
-[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated classes: Set(Lab10.Zad1, Lab10.Zad1.Aktor, Lab10.Zad1.Pracownik, Lab10.Zad1.Rozwiazanie, Lab10.Zad1.Wynik, Lab10.Zad1.Zmien)[0m
-[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated sources:Set(${BASE}/src/main/scala/Zad1.scala)[0m
-[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: Lab10.Zad1, Lab10.Zad1.Aktor, Lab10.Zad1.Pracownik, Lab10.Zad1.Rozwiazanie, Lab10.Zad1.Wynik, Lab10.Zad1.Zmien[0m
+[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated classes: Set(Lab10.Zad2.Graj, Lab10.Zad2.Gracz, Lab10.Zad2.Piłeczka, Lab10.Zad2)[0m
+[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated sources:Set(${BASE}/src/main/scala/Zad2.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: Lab10.Zad2.Graj, Lab10.Zad2.Gracz, Lab10.Zad2.Piłeczka, Lab10.Zad2[0m
 [0m[[0m[0mdebug[0m] [0m[0mcompilation cycle 1[0m
 [0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to D:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab10_04_05\target\scala-2.13\classes ...[0m
 [0m[[0m[0mdebug[0m] [0m[0mGetting org.scala-sbt:compiler-bridge_2.13:1.5.0:compile for Scala 2.13.5[0m
-[0m[[0m[0mdebug[0m] [0m[0m[zinc] Running cached compiler c3ef29 for Scala compiler version 2.13.5[0m
+[0m[[0m[0mdebug[0m] [0m[0m[zinc] Running cached compiler 9d5409b for Scala compiler version 2.13.5[0m
 [0m[[0m[0mdebug[0m] [0m[0m[zinc] The Scala compiler is invoked with:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	-unchecked[0m
 [0m[[0m[0mdebug[0m] [0m[0m	-deprecation[0m
@@ -40,5 +40,5 @@
 [0m[[0m[0mdebug[0m] [0m[0mFinal step, transitive dependencies:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0mNo classes were invalidated.[0m
-[0m[[0m[0mdebug[0m] [0m[0mScala compilation took 0.6019806 s[0m
+[0m[[0m[0mdebug[0m] [0m[0mScala compilation took 0.4129428 s[0m
 [0m[[0m[0mdebug[0m] [0m[0mdone compiling[0m
