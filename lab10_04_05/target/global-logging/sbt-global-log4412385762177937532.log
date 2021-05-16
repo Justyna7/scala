@@ -1,0 +1,30 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(reStart, Some(26277b6f-2d1d-48ba-aaf7-e3909a1305ef), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: reStart[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to D:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab10_04_05\target\scala-2.13\classes ...[0m
+[0m[[0m[31merror[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab10_04_05\src\main\scala\Zad3.scala:42:67: could not find implicit value for parameter timeout: akka.util.Timeout[0m
+[0m[[0m[31merror[0m] [0m[0m        a ! Graj(system.actorSelection("/user/gracz0/").resolveOne().values, true)[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                  ^[0m
+[0m[[0m[31merror[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab10_04_05\src\main\scala\Zad3.scala:44:67: could not find implicit value for parameter timeout: akka.util.Timeout[0m
+[0m[[0m[31merror[0m] [0m[0m        a ! Graj(system.actorSelection("/user/gracz0/").resolveOne().values, false)[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                  ^[0m
+[0m[[0m[31merror[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab10_04_05\src\main\scala\Zad3.scala:46:71: could not find implicit value for parameter timeout: akka.util.Timeout[0m
+[0m[[0m[31merror[0m] [0m[0m        a ! Graj(system.actorSelection("/user/gracz"+(i+1)).resolveOne().values, true)[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                      ^[0m
+[0m[[0m[31merror[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab10_04_05\src\main\scala\Zad3.scala:47:88: could not find implicit value for parameter timeout: akka.util.Timeout[0m
+[0m[[0m[31merror[0m] [0m[0m      case s"gracz$i" => a ! Graj(system.actorSelection("/user/gracz"+(i+1)).resolveOne().values, false)[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                       ^[0m
+[0m[[0m[31merror[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab10_04_05\src\main\scala\Zad3.scala:49:53: could not find implicit value for parameter timeout: akka.util.Timeout[0m
+[0m[[0m[31merror[0m] [0m[0m    system.actorSelection("/user/gracz1").resolveOne().values ! Piłeczka[0m
+[0m[[0m[31merror[0m] [0m[0m                                                    ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab10_04_05\src\main\scala\Zad3.scala:38:61: Auto-application to `()` is deprecated. Supply the empty argument list `()` explicitly to invoke method apply,[0m
+[0m[[0m[33mwarn[0m] [0m[0mor remove the empty argument list from its definition (Java-defined methods are exempt).[0m
+[0m[[0m[33mwarn[0m] [0m[0mIn Scala 3, an unapplied method like this will be eta-expanded into a function.[0m
+[0m[[0m[33mwarn[0m] [0m[0m    val actor = for (i <- 1 to n) yield system.actorOf(Props[Gracz], s"gracz$i")[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
+[0m[[0m[31merror[0m] [0m[0m5 errors found[0m
+[0m[[0m[0mdebug[0m] [0m[0mForcing garbage collection...[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mcompileIncremental[0m) Compilation failed[0m
+[0m[[0m[31merror[0m] [0m[0mTotal time: 1 s, completed 16 maj 2021, 04:01:31[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m
