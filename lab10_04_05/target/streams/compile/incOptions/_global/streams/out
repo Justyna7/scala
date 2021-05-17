@@ -1,2 +1,50 @@
 [0m[[0m[0mdebug[0m] [0m[0mCreated transactional ClassFileManager with tempDir = D:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab10_04_05\target\scala-2.13\classes.bak[0m
+[0m[[0m[0mdebug[0m] [0m[0mAbout to delete class files:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Zad4$Number.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Zad4$Pracownik$$anonfun$przerob$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Zad4$Nadzorca.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Zad4$Lista.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Zad4$Pracownik$$anonfun$receive$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Zad4$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Zad4$Nadzorca$$anonfun$receive$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Zad4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Zad4$Wynik$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Zad4$Pracownik$$anonfun$w$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Zad4$Number$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Zad4$Start.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Zad4$Start$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Zad4$Pracownik.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Zad4$Lista$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mWe backup class files:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Zad4$Number.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Zad4$Pracownik$$anonfun$przerob$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Zad4$Nadzorca.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Zad4$Lista.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Zad4$Pracownik$$anonfun$receive$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Zad4$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Zad4$Nadzorca$$anonfun$receive$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Zad4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Zad4$Wynik$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Zad4$Pracownik$$anonfun$w$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Zad4$Number$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Zad4$Start.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Zad4$Start$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Zad4$Pracownik.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Zad4$Lista$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mRegistering generated classes:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Zad4$Number.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Zad4$Pracownik$$anonfun$przerob$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Zad4$Nadzorca.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Zad4$Lista.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Zad4$Pracownik$$anonfun$receive$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Zad4$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Zad4$Nadzorca$$anonfun$receive$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Zad4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Zad4$Wynik$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Zad4$Pracownik$$anonfun$w$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Zad4$Number$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Zad4$Start.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Zad4$Start$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Zad4$Pracownik.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Zad4$Lista$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0mRemoving the temporary directory used for backing up class files: D:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab10_04_05\target\scala-2.13\classes.bak[0m

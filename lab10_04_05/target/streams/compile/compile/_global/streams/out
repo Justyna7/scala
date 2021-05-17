@@ -1,6 +1,9 @@
-[0m[[0m[33mwarn[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab10_04_05\src\main\scala\Zad3.scala:30:61: Auto-application to `()` is deprecated. Supply the empty argument list `()` explicitly to invoke method apply,[0m
+[0m[[0m[33mwarn[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab10_04_05\src\main\scala\Zad4.scala:60:44: Auto-application to `()` is deprecated. Supply the empty argument list `()` explicitly to invoke method apply,[0m
 [0m[[0m[33mwarn[0m] [0m[0mor remove the empty argument list from its definition (Java-defined methods are exempt).[0m
 [0m[[0m[33mwarn[0m] [0m[0mIn Scala 3, an unapplied method like this will be eta-expanded into a function.[0m
-[0m[[0m[33mwarn[0m] [0m[0m    val actor = for (i <- 1 to n) yield system.actorOf(Props[Gracz], s"gracz$i")[0m
-[0m[[0m[33mwarn[0m] [0m[0m                                                            ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
+[0m[[0m[33mwarn[0m] [0m[0m        val nadzorca = system.actorOf(Props[Nadzorca], "nadzorca")[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                           ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab10_04_05\src\main\scala\Zad4.scala:54:23: a pure expression does nothing in statement position[0m
+[0m[[0m[33mwarn[0m] [0m[0m            case _ => l[0m
+[0m[[0m[33mwarn[0m] [0m[0m                      ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mtwo warnings found[0m
