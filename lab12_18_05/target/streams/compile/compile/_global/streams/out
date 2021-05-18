@@ -1,0 +1,16 @@
+[0m[[0m[33mwarn[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab12_18_05\src\main\scala\Jabberwocky.scala:90:68: Auto-application to `()` is deprecated. Supply the empty argument list `()` explicitly to invoke method apply,[0m
+[0m[[0m[33mwarn[0m] [0m[0mor remove the empty argument list from its definition (Java-defined methods are exempt).[0m
+[0m[[0m[33mwarn[0m] [0m[0mIn Scala 3, an unapplied method like this will be eta-expanded into a function.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      val łucznicy = for (i <- 1 to 500) yield system.actorOf(Props[Łucznik], "lucznik_" + i +"_z_zamku_" + x)[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                   ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab12_18_05\src\main\scala\Jabberwocky.scala:115:38: Auto-application to `()` is deprecated. Supply the empty argument list `()` explicitly to invoke method apply,[0m
+[0m[[0m[33mwarn[0m] [0m[0mor remove the empty argument list from its definition (Java-defined methods are exempt).[0m
+[0m[[0m[33mwarn[0m] [0m[0mIn Scala 3, an unapplied method like this will be eta-expanded into a function.[0m
+[0m[[0m[33mwarn[0m] [0m[0m    val zamek1 = system.actorOf(Props[Zamek], s"zamek1")[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                     ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab12_18_05\src\main\scala\Jabberwocky.scala:116:38: Auto-application to `()` is deprecated. Supply the empty argument list `()` explicitly to invoke method apply,[0m
+[0m[[0m[33mwarn[0m] [0m[0mor remove the empty argument list from its definition (Java-defined methods are exempt).[0m
+[0m[[0m[33mwarn[0m] [0m[0mIn Scala 3, an unapplied method like this will be eta-expanded into a function.[0m
+[0m[[0m[33mwarn[0m] [0m[0m    val zamek2 = system.actorOf(Props[Zamek], s"zamek2")[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                     ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mthree warnings found[0m
