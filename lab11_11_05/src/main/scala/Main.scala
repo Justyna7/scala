@@ -36,7 +36,7 @@ import akka.actor.{ActorSystem, Actor, ActorRef, Props}
 case class Init(liczbaPracownikow: Int)
 case class Zlecenie(tekst: List[String])
 case class Wykonaj( s: String)
-//case class Wynik( /* argumenty */ )
+case class Wynik(x: List[(String,Int)] )
 
 // class MyActor extends Actor {
 //   def receive: Receive = {
@@ -48,21 +48,41 @@ class Nadzorca extends Actor {
     case Init(n) => {
       println("Nadzorca zainicjowany")
       val pracownicy = for (i <- 1 to n) yield Main.system.actorOf(Props[Pracownik], s"pracownik$i")
-      println(pracownicy.toList)
+      //println(pracownicy.toList)
       //actor.toList.foreach(a => a!Aktor(pracownik))
+      println("Nadzorca czeka na zlecenie")
       context.become(przyjmijZlecenie(pracownicy.toList))
       }
   }
   def przyjmijZlecenie(p: List[ActorRef]): Receive ={
-    case Zlecenie(txt) => println(txt)//context.become(agreguj)
+    case Zlecenie(txt) => {
+      println("Otrzymano zlecenie")
+      val t = txt.filterNot(x=> x== "")
+      t.grouped(p.length).toList.map(a => a.foreach(x => p(a.indexOf(x)) ! Wykonaj(x)))
+      context.become(agreguj(List(), t.length - 1, p))
+    }
   }
-  def agreguj(p: List[ActorRef]): Receive = {
-    //case Wynik() =>
+  def agreguj(l: List[(String,Int)], i: Int, p: List[ActorRef]): Receive = {
+    case Wynik(x) => {
+      val n = l.concat(x).groupBy(_._1).map(x => x._2.foldLeft(("", 0.toInt))((a,b) => (b._1, a._2 + b._2))).toList
+      //val s = l.concat(x)
+      if (i == 0) { 
+        println("Mam wynik: " + n)
+        println("Nadzorca czeka na zlecenie")
+        context.become(przyjmijZlecenie(p)) 
+      }
+      else { context.become(agreguj(n, i-1, p)) }
+    }
   }
  }
 class Pracownik extends Actor { 
   def receive: Receive = {
-    case Wykonaj(s) => println(s)
+    case Wykonaj(s) => {
+      val x = s.split(" ").toList.map(x => x.filter(x => x.isLetter).toLowerCase).filterNot(x=> x== "")
+      val n = x.map(a => (a,x.count(_ == a))).foldLeft(List[(String,Int)]())((a,b) => if(a.contains(b)) a else b::a)
+      //println(self.path.name + " " + n)
+      sender ! Wynik(n)
+      }
   }
  }
 
@@ -79,7 +99,7 @@ object Main {
     val nadzorca = system.actorOf(Props[Nadzorca], s"nadzorca")
       nadzorca ! Init(3)
       nadzorca ! Zlecenie(dane)
-      //println(dane())
+      //nadzorca ! Zlecenie(dane)
   }
 
 }
