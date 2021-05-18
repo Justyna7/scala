@@ -91,7 +91,7 @@ class Zamek extends Actor{
       //println(łucznicy)
       val ł = łucznicy.toList
       ł.map( x => if {
-        context.watch(x)
+        context.watch(x) // sprawdza czy aktor nie umarł
         (ł.indexOf(x)<100) x!Rekrutuj(true) else x!Rekrutuj(false))// do zamiany na dwa sety
         }
     }
