@@ -1,4 +1,4 @@
-import akka.actor.{ActorSystem, Actor, Props}
+import akka.actor.{ActorSystem, Actor, ActorRef, Props, Terminated, Stash}
 import scala.concurrent.duration._
 
 
@@ -80,48 +80,146 @@ Podpowiedź: Do stworzenia rozwiązania użyj szablonu projektu zawartego w plik
 //     // system.terminate()
 //   }
 // }
-case class Init(x:Int)
-case class Rekrutuj(stan:Boolean)
+case class Init(x:Int, s:ActorSystem, z:ActorRef)
+case object Rekrutuj
 case object Kill
-class Zamek extends Actor{
+object Salwa{
+  val Strzela = ("Kill")
+}
+case class Wrogowie(w: Set[ActorRef])
+case object Defeat
+class Zamek extends Actor with Stash{
+  import Salwa._
   def receive : Receive = {
-    case Init(x) => {
-      val system = ActorSystem("Halo")
+    case Init(x, system, z) => {
+      //val system = ActorSystem("Halo")
+      println("Inicjalizacja " + self.path.name)
       val łucznicy = for (i <- 1 to 500) yield system.actorOf(Props[Łucznik], "lucznik_" + i +"_z_zamku_" + x)
-      //println(łucznicy)
-      val ł = łucznicy.toList
-      ł.map( x => if {
-        context.watch(x) // sprawdza czy aktor nie umarł
-        (ł.indexOf(x)<100) x!Rekrutuj(true) else x!Rekrutuj(false))// do zamiany na dwa sety
+      x match{
+        case 1 =>{
+          val l = łucznicy.toSet.splitAt(100)
+          val (obrona, rezerwa) = l
+          obrona.map( x => {
+            context.watch(x)
+            x!Rekrutuj
+            })
+          rezerwa.map(x => context.watch(x))
+          //println(obrona)
+          //z!Wrogowie(obrona)
+          context.become(wojna(obrona,rezerwa, z, system))
         }
+        case 2 =>{
+          val l = łucznicy.toSet.splitAt(40)
+          val (obrona, rezerwa) = l
+          obrona.map( x => {
+            context.watch(x)
+            x!Rekrutuj
+            })
+          rezerwa.map(x => context.watch(x))
+          //println(obrona)
+          //z!Wrogowie(obrona)
+          context.become(wojna(obrona,rezerwa, z, system))
+        }
+      }
+      
+    }
+    //case _ => stash()
+  }
+  // def wypowiedzenieWojny(obrona:Set[ActorRef], rezerwa:Set[ActorRef], z:ActorRef) : Receive ={
+  //   case Wrogowie(w) => {
+  //     println("WYPOWIEDZENIE WOJNY " + self.path.name)
+  //     context.become(wojna(obrona,rezerwa, w, z))}
+  //   case _ => stash()
+  // }
+  def wojna(obrona:Set[ActorRef], rezerwa:Set[ActorRef], z:ActorRef, s:ActorSystem) : Receive ={
+    //case "open" => unstashAll()
+    case Strzela => {
+      //println(Strzela)
+      z ! Wrogowie(obrona)
+    }
+    case Wrogowie(wrogowie) => {
+      val l = wrogowie.size
+      val r = scala.util.Random
+      wrogowie.map(w =>{
+        val i = r.nextFloat
+        val szansa = (l/200.0)
+        //println((i, szansa, l))
+        if (i<= szansa) {
+          println("Zabijam " + w.path.name)
+          w ! Kill
+          }// else { println (w.path.name + " Przezyl")}
+      //context.become(wojna(obrona,rezerwa, x, z))
+      })
+    }
+    case Terminated(a) => {
+      //println(a.path.name + "Umarl XXXXXXXXX")
+      if (obrona == Set() && rezerwa == Set()){
+          println(self.path.name + "Przegrana")
+          z ! Defeat
+          context.stop(self)
+      } 
+      else if (rezerwa == Set()){
+        //println("Skonczyla sie rezerwa" )
+        val o = obrona - a
+        //println(o)
+        if (o == Set()){
+          println(self.path.name + "Przegrana")
+          z ! Defeat
+          context.stop(self)
+        } else { context.become(wojna(o,rezerwa, z, s)) }
+      } 
+      else {
+        val r = rezerwa.head
+        val o = obrona - a + r
+        //println(r.path.name + " REKRUTACJAAA")
+        r ! Rekrutuj
+        context.become(wojna(o,rezerwa - r, z, s))
+      }
+    }
+    case Defeat => {
+      println(self.path.name + "Wygrana")
+      context.stop(self)
+      s.terminate()
     }
   }
 }
 class Łucznik extends Actor{
-  def receive : Receive = {//do skasowania
-    case Rekrutuj(s) => s match {
-      case true => context.become(obrona)
-      case false => context.become(rezerwa)
-    }
+  def receive : Receive = {
+    case Rekrutuj => {
+      //println(self.path.name)
+      context.become(obrona)}
   }
   def obrona : Receive = {
-    case Kill => println(self.path.name + "Umarłem")
-  }
-  def rezerwa : Receive = {//do skasowania
-    case _ => println(self.path.name)
+    case Kill => {
+      //println(self.path.name + " Umarlem")
+      context.stop(self)
+      }
   }
 }
 
 object Main {
   def main(args: Array[String]): Unit = {
     val system = ActorSystem("HaloAkka")
-    val zamek1 = system.actorOf(Props[Zamek], s"zamek1")
-    val zamek2 = system.actorOf(Props[Zamek], s"zamek2")
-    zamek1 ! Init(1)
-    zamek2 ! Init(2)
-      // nadzorca ! Init(3)
-      // nadzorca ! Zlecenie(dane)
-      //nadzorca ! Zlecenie(dane)
+    val zamek1 = system.actorOf(Props[Zamek](), s"zamek1")
+    val zamek2 = system.actorOf(Props[Zamek](), s"zamek2")
+    zamek1 ! Init(1, system, zamek2)
+    zamek2 ! Init(2, system, zamek1)
+    // zamek1 ! Strzela
+    // zamek2 ! Strzela
+    // zamek1 ! Strzela
+    // zamek2 ! Strzela
+    import system.dispatcher
+    val planista = system.scheduler.scheduleWithFixedDelay(
+      Duration.Zero,
+      60.milliseconds,
+      zamek1,
+      Salwa.Strzela
+    )
+    val planista2 = system.scheduler.scheduleWithFixedDelay(
+      Duration.Zero,
+      60.milliseconds,
+      zamek2,
+      Salwa.Strzela
+    )
   }
-
 }
