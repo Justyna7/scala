@@ -44,29 +44,47 @@ import akka.actor._
 case class Wstaw2(n: Int)
 case class Usuń(n: Int)
 case class Pusto(n: Int)
+case class EndMe()
 
 class Element extends Actor {
 
   def receive: Receive = {
-    case Wstaw2(x) => context.become(korzeń(x))
+    case Wstaw2(x) => {
+      println(s"Mam 1 element o wartosci ${x}")
+      context.become(korzeń(x))}
     case _ => ???
   }
 
   def korzeń(wartość: Int): Receive = {
-    case Wstaw2(x) if (x == wartość){
+    case Wstaw2(x) if (x == wartość) => {
+      println(s"Mam 2 elementy o wartosci ${x}")
       val n =  context.actorOf(Props[Element])
-      n ! Wstaw2(x)
-      context.become(zPotomkami(Set(n)))
+      //n ! Wstaw2(x)
+      context.become(zPotomkami(wartość,Set(n)))
     }
-    case Usuń(x) if (x == wartość){
-      
-      context.stop(self)
+    case Usuń(x) if (x == wartość) => {
+      context.parent ! Pusto(x)
     }
     case _ => ???
   }
 
   def zPotomkami(wartość: Int, potomkowie: Set[ActorRef]): Receive = {
-    ???
+    case Wstaw2(x) if (x == wartość) => {
+      val n =  context.actorOf(Props[Element])
+      println(s"+Mam ${potomkowie.size + 2} elementow o wartosci ${x}")
+      //n ! Wstaw2(x)
+      context.become(zPotomkami(wartość, potomkowie + n))
+    }
+    case Usuń(x) if (x == wartość) => {
+      println(s"-Mam ${potomkowie.size} elementow o wartosci ${x}")
+      potomkowie.head ! PoisonPill
+      if (potomkowie - potomkowie.head == Set()){
+        context.become(korzeń(wartość))
+      }else{
+        context.become(zPotomkami(wartość, potomkowie - potomkowie.head))
+      }
+    }
+    case _ => ??? 
   }
 
 }
@@ -74,31 +92,45 @@ class Element extends Actor {
 class Nadzorca extends Actor {
   def receive: Receive = {
     case Wstaw2(x) => {
-      val n =  context.actorOf(Props[Element], s"${x}")
+      val n =  context.actorOf(Props[Element], s"root${x}")
       n ! Wstaw2(x)
-      context.become(stan(Set(x)))
+      context.become(stan(Set(x), Set()))
       }
   }
 
-  def stan(znane: Set[Int]): Receive = {
+  def stan(znane: Set[Int], u: Set[Int] ): Receive = {
     case Wstaw2(x) if znane.contains(x)=> {
-      context.actorSelection("/user/nadzorca/root*") ! Wstaw2(x)
+      context.actorSelection("/user/nadzorca2/root*") ! Wstaw2(x)
+      }
+    case Wstaw2(x) if u.contains(x)=> {
+      context.actorSelection("/user/nadzorca2/root*") ! Wstaw2(x)
+      context.become(stan(znane + x, u - x))
       }
     case Wstaw2(x) => {
       val n =  context.actorOf(Props[Element], s"root${x}")
+      println(s"Mam 1 element o wartosci ${x}")
       n ! Wstaw2(x)
-      context.become(stan(znane + x))
+      context.become(stan(znane + x, u))
       }
     case Usuń(x) if znane.contains(x)=> {
-      context.actorSelection("/user/nadzorca/root*") ! Usuń(x)
+      context.actorSelection("/user/nadzorca2/root*") ! Usuń(x)
       }
     case Pusto(x) => {
-      context.become(stan(znane - x))
+      context.become(stan(znane - x, u + x))
       }
+    case EndMe() => {
+      println(s"END")
+      println(znane.size)
+    }
   }
 }
 
 object Zad2 extends App {
-  val system = ActorSystem("system")
-  val nadzorca = system.actorOf(Props[Nadzorca], "nadzorca")
+  val system = ActorSystem("system2")
+  val nadzorca = system.actorOf(Props[Nadzorca], "nadzorca2")
+  nadzorca ! Wstaw2(3)
+  nadzorca ! Wstaw2(3)
+  nadzorca ! Wstaw2(3)
+  nadzorca ! Usuń(3)
+  //nadzorca ! EndMe()
 }
