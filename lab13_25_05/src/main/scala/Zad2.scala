@@ -45,14 +45,24 @@ case class Wstaw2(n: Int)
 case class Usuń(n: Int)
 case class Pusto(n: Int)
 
-class Węzeł2 extends Actor {
+class Element extends Actor {
 
   def receive: Receive = {
-    ???
+    case Wstaw2(x) => context.become(korzeń(x))
+    case _ => ???
   }
 
   def korzeń(wartość: Int): Receive = {
-    ???
+    case Wstaw2(x) if (x == wartość){
+      val n =  context.actorOf(Props[Element])
+      n ! Wstaw2(x)
+      context.become(zPotomkami(Set(n)))
+    }
+    case Usuń(x) if (x == wartość){
+      
+      context.stop(self)
+    }
+    case _ => ???
   }
 
   def zPotomkami(wartość: Int, potomkowie: Set[ActorRef]): Receive = {
@@ -63,15 +73,32 @@ class Węzeł2 extends Actor {
 
 class Nadzorca extends Actor {
   def receive: Receive = {
-    ???
+    case Wstaw2(x) => {
+      val n =  context.actorOf(Props[Element], s"${x}")
+      n ! Wstaw2(x)
+      context.become(stan(Set(x)))
+      }
   }
 
   def stan(znane: Set[Int]): Receive = {
-    ???
+    case Wstaw2(x) if znane.contains(x)=> {
+      context.actorSelection("/user/nadzorca/root*") ! Wstaw2(x)
+      }
+    case Wstaw2(x) => {
+      val n =  context.actorOf(Props[Element], s"root${x}")
+      n ! Wstaw2(x)
+      context.become(stan(znane + x))
+      }
+    case Usuń(x) if znane.contains(x)=> {
+      context.actorSelection("/user/nadzorca/root*") ! Usuń(x)
+      }
+    case Pusto(x) => {
+      context.become(stan(znane - x))
+      }
   }
 }
 
 object Zad2 extends App {
   val system = ActorSystem("system")
-  ???
+  val nadzorca = system.actorOf(Props[Nadzorca], "nadzorca")
 }
