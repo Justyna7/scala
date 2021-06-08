@@ -1,0 +1,15 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(run, Some(c099fe98-e579-4a7b-ae67-c826aa2ef625), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Compile / run[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 7 Scala sources to D:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab14_01_06\target\scala-2.12\classes ...[0m
+[0m[[0m[31merror[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab14_01_06\src\main\scala\zad1\Organizator.scala:37:66: ')' expected but string literal found.[0m
+[0m[[0m[31merror[0m] [0m[0m      val e = context.system.actorOf( Props( classOf[Grupa](),n) s"eliminacje")[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                 ^[0m
+[0m[[0m[31merror[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab14_01_06\src\main\scala\zad1\Organizator.scala:38:35: ';' expected but ')' found.[0m
+[0m[[0m[31merror[0m] [0m[0m      context.become(eliminacje(e))[0m
+[0m[[0m[31merror[0m] [0m[0m                                  ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mcompileIncremental[0m) Compilation failed[0m
+[0m[[0m[31merror[0m] [0m[0mTotal time: 0 s, completed 8 cze 2021, 01:06:43[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m
+[0m[[0m[0mdebug[0m] [0m[0mForcing garbage collection...[0m

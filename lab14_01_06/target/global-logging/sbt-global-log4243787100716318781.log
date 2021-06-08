@@ -1,0 +1,17 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(run, Some(29f388ae-eb23-4d17-b592-78f07feba5a9), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Compile / run[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 7 Scala sources to D:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab14_01_06\target\scala-2.12\classes ...[0m
+[0m[[0m[31merror[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab14_01_06\src\main\scala\zad1\Runda.scala:24:10: not found: value Runda[0m
+[0m[[0m[31merror[0m] [0m[0m    case Runda => {[0m
+[0m[[0m[31merror[0m] [0m[0m         ^[0m
+[0m[[0m[31merror[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab14_01_06\src\main\scala\zad1\Runda.scala:31:10: not found: value Wynik[0m
+[0m[[0m[31merror[0m] [0m[0m    case Wynik(w) => context.become(eliminacje((sender, w)::wyniki))[0m
+[0m[[0m[31merror[0m] [0m[0m         ^[0m
+[0m[[0m[31merror[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab14_01_06\src\main\scala\zad1\Runda.scala:32:10: not found: value Wyniki[0m
+[0m[[0m[31merror[0m] [0m[0m    case Wyniki => println(wyniki)[0m
+[0m[[0m[31merror[0m] [0m[0m         ^[0m
+[0m[[0m[31merror[0m] [0m[0mthree errors found[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mcompileIncremental[0m) Compilation failed[0m
+[0m[[0m[31merror[0m] [0m[0mTotal time: 0 s, completed 8 cze 2021, 11:12:30[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m

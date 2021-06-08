@@ -1,0 +1,13 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(run, Some(d7a9d57c-6dfa-4e3e-874a-f117db53d38c), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Compile / run[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to D:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab14_01_06\target\scala-2.12\classes ...[0m
+[0m[[0m[31merror[0m] [0m[0mD:\uczelnia\semestr poprawkowy\scala_poprawa\luc-justyna\lab14_01_06\src\main\scala\zad1\Organizator.scala:33:72: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : Char(' ')[0m
+[0m[[0m[31merror[0m] [0m[0m required: Char => Boolean[0m
+[0m[[0m[31merror[0m] [0m[0m        context.actorOf(Props[Zawodnik], x.imie + x.nazwisko.filterNot(' ') + i)[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                       ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mcompileIncremental[0m) Compilation failed[0m
+[0m[[0m[31merror[0m] [0m[0mTotal time: 1 s, completed 7 cze 2021, 22:57:45[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m

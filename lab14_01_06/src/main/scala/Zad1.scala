@@ -58,21 +58,28 @@ object Zad1 extends App {
   breakable {
     while (true) {
       StdIn.readLine("polecenie: ") match {
-        case "start" =>
+        case "start" => organizator ! Organizator.Start
           // początek zawodów
-          organizator ! Organizator.Start
-        case "eliminacje" =>
+        case "eliminacje" =>{
+          println("Rozpoczynamy eliminacje")
+          organizator ! Organizator.Runda
           // polecenie rozegrania rundy eliminacyjnej
-        case "finał" =>
+        }
+        case "final" =>{
+          println("Rozpoczynamy finały")
+          organizator ! Organizator.Runda
           // polecenie rozegrania rundy finałowej
           // wymaga zamknięcia Rundy eliminacyjnej i utworzenie
           // Rundy finałowej, zawierającej najlepszych 20.
           // zawodników z Rundy eliminacyjnej
-        case "wyniki" =>
+        }
+        
+        case "wyniki" => organizator ! Organizator.Wyniki
           // żądanie rankingów (lub rankingu finałowego)
-        case "koniec" =>
+        case "koniec" =>{
           organizator ! Organizator.Stop
           break()
+        }
         case _ =>
       }
     }
